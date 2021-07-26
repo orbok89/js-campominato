@@ -77,6 +77,7 @@ gioca.addEventListener('click',
                 var pericolo1 = rdm_noripetizione(difficolta_b);
                 console.log(pericolo1);
                 var controllo1 = 0;
+                var punteggio = 0;
                 for (var i=1 ; i< 51; i++){
                     let btn = document.createElement("button");
                     btn.innerHTML = i;
@@ -86,12 +87,13 @@ gioca.addEventListener('click',
                     function(){
                         controllo1 = is_array(pericolo1, btn.id );
                         if (controllo1 == false){
-                            alert('ravo');
-                            document.getElementById(i).style.display = "none";
+                            alert('bravo');
+                            document.getElementById(btn.id).style.display = "none";
+                            punteggio= punteggio +1;
 
                         }
                         else{
-                            alert('bomba')
+                            alert('booooom! hai totalizzato' + punteggio);
                         }
 
 
@@ -101,21 +103,62 @@ gioca.addEventListener('click',
                 break;
             case 'normale':
                 var difficolta_b = 80;
-                for (var i=1 ; i<81; i++){
+                var pericolo1 = rdm_noripetizione(difficolta_b);
+                console.log(pericolo1);
+                var controllo1 = 0;
+                var punteggio = 0;
+                for (var i=1 ; i< 81; i++){
                     let btn = document.createElement("button");
                     btn.innerHTML = i;
                     btn.id = i;
                     document.body.appendChild(btn);
+                    btn.addEventListener('click',
+                    function(){
+                        controllo1 = is_array(pericolo1, btn.id );
+                        if (controllo1 == false){
+                            alert('bravo');
+                            document.getElementById(btn.id).style.display = "none";
+                            punteggio= punteggio +1;
+
+                        }
+                        else{
+                            alert('booooom! hai totalizzato' + punteggio);
+                        }
+
+
+
+                    })
                 }
                 break;
             default:
                 var difficolta_b = 100;
-                for (var i=1 ; i<101; i++){
+                var pericolo1 = rdm_noripetizione(difficolta_b);
+                console.log(pericolo1);
+                var controllo1 = 0;
+                var punteggio = 0;
+                for (var i=1 ; i< 101; i++){
                     let btn = document.createElement("button");
                     btn.innerHTML = i;
                     btn.id = i;
                     document.body.appendChild(btn);
+                    btn.addEventListener('click',
+                    function(){
+                        controllo1 = is_array(pericolo1, btn.id );
+                        if (controllo1 == false){
+                            alert('bravo');
+                            document.getElementById(btn.id).style.display = "none";
+                            punteggio= punteggio +1;
+
+                        }
+                        else{
+                            alert('booooom! hai totalizzato' + punteggio);
+                        }
+
+
+
+                    })
                 }
+                break;
                 
         }
         console.log(difficolta_b);
