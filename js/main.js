@@ -31,7 +31,7 @@ function rdm_noripetizione(max) {
 return pericolo;
 }
 
-var pericolo1 = rdm_noripetizione(100);
+
 console.log(pericolo1);
 var difficolta = parseInt(prompt('scegli difficoltà da 0 a 2'));
 switch (difficolta) {
@@ -45,7 +45,7 @@ switch (difficolta) {
         var difficolta_b = 100;
 }
 console.log(difficolta_b);
-
+var pericolo1 = rdm_noripetizione(difficolta_b);
 var i = 0;
 var controllo1 = 0;
 var numeri_buoni = [] ;
