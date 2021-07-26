@@ -32,41 +32,133 @@ return pericolo;
 }
 
 
-console.log(pericolo1);
-var difficolta = parseInt(prompt('scegli difficoltà da 0 a 2'));
-switch (difficolta) {
-    case 0: 
-        var difficolta_b = 50;
-        break;
-    case 1:
-        var difficolta_b = 80;
-        break;
-    default:
-        var difficolta_b = 100;
-}
-console.log(difficolta_b);
-var pericolo1 = rdm_noripetizione(difficolta_b);
-var i = 0;
-var controllo1 = 0;
-var numeri_buoni = [] ;
 
-while ( i < difficolta_b) {
-    colpo = parseInt(prompt('inserisci numero da uno a 100'));
-    controllo1 = is_array(pericolo1, colpo );
-    controllo2 = is_array(numeri_buoni, colpo );
-    
-    if (controllo1 == false && controllo2 == false){
+// var difficolta = parseInt(prompt('scegli difficoltà da 0 a 2'));
+// switch (difficolta) {
+//     case 2: 
+//         var difficolta_b = 50;
+//         for (i=0 ; i<50; i++){
+//             let btn = document.createElement("button");
+//             btn.innerHTML = i;
+//             btn.id = i;
+//             document.body.appendChild(btn);
+//         }
+
+//         break;
+//     case 1:
+//         var difficolta_b = 80;
+//         for (i=0 ; i<80; i++){
+//             let btn = document.createElement("button");
+//             btn.innerHTML = i;
+//             btn.id = i;
+//             document.body.appendChild(btn);
+//         }
+//         break;
+//     default:
+//         var difficolta_b = 100;
+//         for (i=0 ; i<100; i++){
+//             let btn = document.createElement("button");
+//             btn.innerHTML = i;
+//             btn.id = i;
+//             document.body.appendChild(btn);
+//         }
+// }
+var difficolt = document.getElementById('gioca');
+gioca.addEventListener('click',
+    function(){
         
-        numeri_buoni.push(colpo);
-        i= i + 1;
+
+
+
+        difficolta = document.getElementById('difficolta').value;
+        switch (difficolta) {
+            case 'difficile': 
+                var difficolta_b = 50;
+                var pericolo1 = rdm_noripetizione(difficolta_b);
+                console.log(pericolo1);
+                var controllo1 = 0;
+                for (var i=1 ; i< 51; i++){
+                    let btn = document.createElement("button");
+                    btn.innerHTML = i;
+                    btn.id = i;
+                    document.body.appendChild(btn);
+                    btn.addEventListener('click',
+                    function(){
+                        controllo1 = is_array(pericolo1, btn.id );
+                        if (controllo1 == false){
+                            alert('ravo');
+                            document.getElementById(i).style.display = "none";
+
+                        }
+                        else{
+                            alert('bomba')
+                        }
+
+
+
+                    })
+                }
+                break;
+            case 'normale':
+                var difficolta_b = 80;
+                for (var i=1 ; i<81; i++){
+                    let btn = document.createElement("button");
+                    btn.innerHTML = i;
+                    btn.id = i;
+                    document.body.appendChild(btn);
+                }
+                break;
+            default:
+                var difficolta_b = 100;
+                for (var i=1 ; i<101; i++){
+                    let btn = document.createElement("button");
+                    btn.innerHTML = i;
+                    btn.id = i;
+                    document.body.appendChild(btn);
+                }
+                
+        }
+        console.log(difficolta_b);
+        
+
     }
-    else if (controllo1 == false && controllo2 == true){
-        alert('numero già inserito');
-    }
-    else {
-        alert('boom! hai totalizzato '+ numeri_buoni.length );
-        i= difficolta_b;
-    }
+)
+//  var difficolta_b = 19;
+// console.log(difficolta_b);
+// var pericolo1 = rdm_noripetizione(difficolta_b);
+// console.log(pericolo1);
+// var i = 0;
+// var controllo1 = 0;
+// var numeri_buoni = [] ;
+
+// while ( i < difficolta_b) {
+//     colpo = parseInt(prompt('inserisci numero da uno a 100'));
+//     controllo1 = is_array(pericolo1, colpo );
+//     controllo2 = is_array(numeri_buoni, colpo );
+    
+//     if (controllo1 == false && controllo2 == false){
+        
+//         numeri_buoni.push(colpo);
+//         i= i + 1;
+//     }
+//     else if (controllo1 == false && controllo2 == true){
+//         alert('numero già inserito');
+//     }
+//     else {
+//         alert('boom! hai totalizzato '+ numeri_buoni.length );
+//         i= difficolta_b;
+//     }
 
     
-}
+// }
+
+
+
+
+
+// for (i=0 ; i<10; i++){
+//     let btn = document.createElement("button");
+//     btn.innerHTML = i;
+//     btn.id = i;
+//     document.body.appendChild(btn);
+// }
