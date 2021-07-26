@@ -73,6 +73,9 @@ gioca.addEventListener('click',
         difficolta = document.getElementById('difficolta').value;
         switch (difficolta) {
             case 'difficile': 
+                var prova = document.createElement("contenitore");
+                prova.id= 'contenitore';
+                document.body.appendChild(prova);
                 var difficolta_b = 50;
                 var pericolo1 = rdm_noripetizione(difficolta_b);
                 console.log(pericolo1);
@@ -82,7 +85,7 @@ gioca.addEventListener('click',
                     let btn = document.createElement("button");
                     btn.innerHTML = i;
                     btn.id = i;
-                    document.body.appendChild(btn);
+                    document.getElementById('contenitore').appendChild(btn);
                     btn.addEventListener('click',
                     function(){
                         controllo1 = is_array(pericolo1, btn.id );
@@ -94,6 +97,7 @@ gioca.addEventListener('click',
                         }
                         else{
                             alert('booooom! hai totalizzato' + punteggio);
+                            prova.remove();
                         }
 
 
@@ -102,6 +106,9 @@ gioca.addEventListener('click',
                 }
                 break;
             case 'normale':
+                var prova = document.createElement("contenitore");
+                prova.id= 'contenitore';
+                document.body.appendChild(prova);
                 var difficolta_b = 80;
                 var pericolo1 = rdm_noripetizione(difficolta_b);
                 console.log(pericolo1);
@@ -111,7 +118,7 @@ gioca.addEventListener('click',
                     let btn = document.createElement("button");
                     btn.innerHTML = i;
                     btn.id = i;
-                    document.body.appendChild(btn);
+                    document.getElementById('contenitore').appendChild(btn);
                     btn.addEventListener('click',
                     function(){
                         controllo1 = is_array(pericolo1, btn.id );
@@ -123,6 +130,7 @@ gioca.addEventListener('click',
                         }
                         else{
                             alert('booooom! hai totalizzato' + punteggio);
+                            prova.remove();
                         }
 
 
@@ -131,6 +139,9 @@ gioca.addEventListener('click',
                 }
                 break;
             default:
+                var prova = document.createElement("contenitore");
+                prova.id= 'contenitore';
+                document.body.appendChild(prova);
                 var difficolta_b = 100;
                 var pericolo1 = rdm_noripetizione(difficolta_b);
                 console.log(pericolo1);
@@ -140,7 +151,8 @@ gioca.addEventListener('click',
                     let btn = document.createElement("button");
                     btn.innerHTML = i;
                     btn.id = i;
-                    document.body.appendChild(btn);
+                    document.getElementById('contenitore').appendChild(btn);
+                    
                     btn.addEventListener('click',
                     function(){
                         controllo1 = is_array(pericolo1, btn.id );
@@ -152,6 +164,8 @@ gioca.addEventListener('click',
                         }
                         else{
                             alert('booooom! hai totalizzato' + punteggio);
+                            
+                            prova.remove();
                         }
 
 
