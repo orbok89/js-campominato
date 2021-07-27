@@ -47,6 +47,41 @@ function creacampo(num){
 
     }
 }
+function is_array2(vettore, elemento){
+    var flag = 0;
+    for (i = 0; i < vettore.length; i++){
+        if (vettore[i] == elemento){
+            flag = 1;
+        }
+
+    }
+    return flag;
+}
+
+
+function conta_bombe (posizione, coordinate){
+    var controllo1 = is_array2(coordinate, (posizione + 10) )
+    if ((posizione % 10) !== 0){
+        var controllo1 = controllo1 + is_array2(coordinate, (posizione + 1) );
+        var controllo1 = controllo1 + is_array2(coordinate, (posizione + 11) );
+        var controllo1 = controllo1 + is_array2(coordinate, (posizione - 9) );
+    }
+   
+    
+    
+    
+    if (((posizione - 1) % 10) !== 0){
+        var controllo1 = controllo1 + is_array2(coordinate, (posizione - 1) );
+        var controllo1 = controllo1 + is_array2(coordinate, (posizione + 9) );
+        var controllo1 = controllo1 + is_array2(coordinate, (posizione - 11) );
+    }
+   
+    
+    var controllo1 = controllo1 + is_array2(coordinate, (posizione - 10) );
+    
+    return controllo1;
+
+}
 
 var difficolt = document.getElementById('gioca');
 gioca.addEventListener('click',
@@ -81,16 +116,17 @@ gioca.addEventListener('click',
                 console.log(sparo);
                 let element = document.querySelectorAll("[data-cella='"+ e.target.dataset.cella +"']");
                 console.log(element[0]);
-                element[0].classList.add('rosso');
                 controllo1 = is_array(pericolo1, sparo );
                 if (controllo1 == false){
-                    element[0].classList.add('verde');
+                    var bombe_vicine = conta_bombe(sparo, pericolo1);
+                    element[0].innerHTML= bombe_vicine;
                     punteggio = punteggio + 1;
                 }
                 else{
                     element[0].classList.add('rosso');
                     alert('hai perso il tup punteggio è' + punteggio);
-                    prova.remove();
+                    campo.remove();
+
                 }
         
             }
