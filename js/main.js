@@ -33,153 +33,124 @@ return pericolo;
 
 
 
-// var difficolta = parseInt(prompt('scegli difficoltà da 0 a 2'));
-// switch (difficolta) {
-//     case 2: 
-//         var difficolta_b = 50;
-//         for (i=0 ; i<50; i++){
-//             let btn = document.createElement("button");
-//             btn.innerHTML = i;
-//             btn.id = i;
-//             document.body.appendChild(btn);
-//         }
 
-//         break;
-//     case 1:
-//         var difficolta_b = 80;
-//         for (i=0 ; i<80; i++){
-//             let btn = document.createElement("button");
-//             btn.innerHTML = i;
-//             btn.id = i;
-//             document.body.appendChild(btn);
-//         }
-//         break;
-//     default:
-//         var difficolta_b = 100;
-//         for (i=0 ; i<100; i++){
-//             let btn = document.createElement("button");
-//             btn.innerHTML = i;
-//             btn.id = i;
-//             document.body.appendChild(btn);
-//         }
-// }
-var difficolt = document.getElementById('gioca');
-gioca.addEventListener('click',
-    function(){
+// var difficolt = document.getElementById('gioca');
+// gioca.addEventListener('click',
+//     function(){
         
 
 
 
-        difficolta = document.getElementById('difficolta').value;
-        switch (difficolta) {
-            case 'difficile': 
-                var prova = document.createElement("contenitore");
-                prova.id= 'contenitore';
-                document.body.appendChild(prova);
-                var difficolta_b = 50;
-                var pericolo1 = rdm_noripetizione(difficolta_b);
-                console.log(pericolo1);
-                var controllo1 = 0;
-                var punteggio = 0;
-                for (var i=1 ; i< 51; i++){
-                    let btn = document.createElement("button");
-                    btn.innerHTML = i;
-                    btn.id = i;
-                    document.getElementById('contenitore').appendChild(btn);
-                    btn.addEventListener('click',
-                    function(){
-                        controllo1 = is_array(pericolo1, btn.id );
-                        if (controllo1 == false){
-                            alert('bravo');
-                            document.getElementById(btn.id).style.display = "none";
-                            punteggio= punteggio +1;
+//         difficolta = document.getElementById('difficolta').value;
+//         switch (difficolta) {
+//             case 'difficile': 
+//                 var prova = document.createElement("contenitore");
+//                 prova.id= 'contenitore';
+//                 document.body.appendChild(prova);
+//                 var difficolta_b = 50;
+//                 var pericolo1 = rdm_noripetizione(difficolta_b);
+//                 console.log(pericolo1);
+//                 var controllo1 = 0;
+//                 var punteggio = 0;
+//                 for (var i=1 ; i< 51; i++){
+//                     let btn = document.createElement("button");
+//                     btn.innerHTML = i;
+//                     btn.id = i;
+//                     document.getElementById('contenitore').appendChild(btn);
+//                     btn.addEventListener('click',
+//                     function(){
+//                         controllo1 = is_array(pericolo1, btn.id );
+//                         if (controllo1 == false){
+//                             alert('bravo');
+//                             document.getElementById(btn.id).style.display = "none";
+//                             punteggio= punteggio +1;
 
-                        }
-                        else{
-                            alert('booooom! hai totalizzato' + punteggio);
-                            prova.remove();
-                        }
-
-
-
-                    })
-                }
-                break;
-            case 'normale':
-                var prova = document.createElement("contenitore");
-                prova.id= 'contenitore';
-                document.body.appendChild(prova);
-                var difficolta_b = 80;
-                var pericolo1 = rdm_noripetizione(difficolta_b);
-                console.log(pericolo1);
-                var controllo1 = 0;
-                var punteggio = 0;
-                for (var i=1 ; i< 81; i++){
-                    let btn = document.createElement("button");
-                    btn.innerHTML = i;
-                    btn.id = i;
-                    document.getElementById('contenitore').appendChild(btn);
-                    btn.addEventListener('click',
-                    function(){
-                        controllo1 = is_array(pericolo1, btn.id );
-                        if (controllo1 == false){
-                            alert('bravo');
-                            document.getElementById(btn.id).style.display = "none";
-                            punteggio= punteggio +1;
-
-                        }
-                        else{
-                            alert('booooom! hai totalizzato' + punteggio);
-                            prova.remove();
-                        }
+//                         }
+//                         else{
+//                             alert('booooom! hai totalizzato' + punteggio);
+//                             prova.remove();
+//                         }
 
 
 
-                    })
-                }
-                break;
-            default:
-                var prova = document.createElement("contenitore");
-                prova.id= 'contenitore';
-                document.body.appendChild(prova);
-                var difficolta_b = 100;
-                var pericolo1 = rdm_noripetizione(difficolta_b);
-                console.log(pericolo1);
-                var controllo1 = 0;
-                var punteggio = 0;
-                for (var i=1 ; i< 101; i++){
-                    let btn = document.createElement("button");
-                    btn.innerHTML = i;
-                    btn.id = i;
-                    document.getElementById('contenitore').appendChild(btn);
+//                     })
+//                 }
+//                 break;
+//             case 'normale':
+//                 var prova = document.createElement("contenitore");
+//                 prova.id= 'contenitore';
+//                 document.body.appendChild(prova);
+//                 var difficolta_b = 80;
+//                 var pericolo1 = rdm_noripetizione(difficolta_b);
+//                 console.log(pericolo1);
+//                 var controllo1 = 0;
+//                 var punteggio = 0;
+//                 for (var i=1 ; i< 81; i++){
+//                     let btn = document.createElement("button");
+//                     btn.innerHTML = i;
+//                     btn.id = i;
+//                     document.getElementById('contenitore').appendChild(btn);
+//                     btn.addEventListener('click',
+//                     function(){
+//                         controllo1 = is_array(pericolo1, btn.id );
+//                         if (controllo1 == false){
+//                             alert('bravo');
+//                             document.getElementById(btn.id).style.display = "none";
+//                             punteggio= punteggio +1;
+
+//                         }
+//                         else{
+//                             alert('booooom! hai totalizzato' + punteggio);
+//                             prova.remove();
+//                         }
+
+
+
+//                     })
+//                 }
+//                 break;
+//             default:
+//                 var prova = document.createElement("contenitore");
+//                 prova.id= 'contenitore';
+//                 document.body.appendChild(prova);
+//                 var difficolta_b = 100;
+//                 var pericolo1 = rdm_noripetizione(difficolta_b);
+//                 console.log(pericolo1);
+//                 var controllo1 = 0;
+//                 var punteggio = 0;
+//                 for (var i=1 ; i< 101; i++){
+//                     let btn = document.createElement("button");
+//                     btn.innerHTML = i;
+//                     btn.id = i;
+//                     document.getElementById('contenitore').appendChild(btn);
                     
-                    btn.addEventListener('click',
-                    function(){
-                        controllo1 = is_array(pericolo1, btn.id );
-                        if (controllo1 == false){
-                            alert('bravo');
-                            document.getElementById(btn.id).style.display = "none";
-                            punteggio= punteggio +1;
+//                     btn.addEventListener('click',
+//                     function(){
+//                         controllo1 = is_array(pericolo1, btn.id );
+//                         if (controllo1 == false){
+//                             alert('bravo');
+//                             document.getElementById(btn.id).style.display = "none";
+//                             punteggio= punteggio +1;
 
-                        }
-                        else{
-                            alert('booooom! hai totalizzato' + punteggio);
+//                         }
+//                         else{
+//                             alert('booooom! hai totalizzato' + punteggio);
                             
-                            prova.remove();
-                        }
+//                             prova.remove();
+//                         }
 
 
 
-                    })
-                }
-                break;
+//                     })
+//                 }
+//                 break;
                 
-        }
-        console.log(difficolta_b);
+//         }
+//         console.log(difficolta_b);
         
 
-    }
-)
+//     }
+// )
 //  var difficolta_b = 19;
 // console.log(difficolta_b);
 // var pericolo1 = rdm_noripetizione(difficolta_b);
@@ -219,3 +190,71 @@ gioca.addEventListener('click',
 //     btn.id = i;
 //     document.body.appendChild(btn);
 // }
+function creacampo(num){
+    for (let i= 1; i <= num; i++){
+        let cella = `
+            <div data-cella= "${i}" class='cella' ></div>
+        `
+        let templatecella= document.createElement('div');
+        templatecella.classList.add('quadrato');
+        templatecella.innerHTML= cella;
+        document.getElementById('campo').appendChild(templatecella);
+
+
+    }
+}
+document.getElementById('campo').addEventListener('click',
+    function(e){
+        console.log(e.target.dataset.cella);
+        let element = document.querySelectorAll("[data-cella='"+ e.target.dataset.cella +"']");
+        console.log(element[0]);
+        element[0].classList.add('rosso');
+    }
+)
+var difficolt = document.getElementById('gioca');
+gioca.addEventListener('click',
+    function(){
+        difficolta = document.getElementById('difficolta').value;
+        var dif = 0;
+        switch (difficolta){
+            
+            case 'difficile':
+                dif = 50;
+                break;
+            case 'normale':
+                dif = 80;
+                break;
+            default:
+                dif = 100;
+                break;
+        }
+        creacampo(dif);
+        var pericolo1 = rdm_noripetizione(dif);
+        console.log(pericolo1);
+        //                 var controllo1 = 0;
+        //                 var punteggio = 0;
+        //                 for (var i=1 ; i< 101; i++){
+        //                     let btn = document.createElement("button");
+        //                     btn.innerHTML = i;
+        //                     btn.id = i;
+        //                     document.getElementById('contenitore').appendChild(btn);
+                            
+        //                     btn.addEventListener('click',
+        //                     function(){
+        //                         controllo1 = is_array(pericolo1, btn.id );
+        //                         if (controllo1 == false){
+        //                             alert('bravo');
+        //                             document.getElementById(btn.id).style.display = "none";
+        //                             punteggio= punteggio +1;
+        
+        //                         }
+        //                         else{
+        //                             alert('booooom! hai totalizzato' + punteggio);
+                                    
+        //                             prova.remove();
+        //                         }
+        
+        
+        
+    }
+)
